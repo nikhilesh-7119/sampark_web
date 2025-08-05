@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sampark_web/controller/app_controller.dart';
 
 class MainInfo extends StatelessWidget {
   const MainInfo({super.key});
@@ -7,6 +9,7 @@ class MainInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width < 700 ?700 :MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
+    AppController appController=Get.put(AppController());
     return Row(
       children: [
         Expanded(
@@ -70,25 +73,30 @@ class MainInfo extends StatelessWidget {
               SizedBox(height: 20),
               Row(
                 children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primary,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(Icons.android, size: 30),
-                        SizedBox(width: 10),
-                        Text(
-                          'Download App',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                  InkWell(
+                    onTap: (){
+                      appController.downloadApk();
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.primary,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.android, size: 30),
+                          SizedBox(width: 10),
+                          Text(
+                            'Download App',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],

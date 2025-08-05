@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sampark_web/controller/app_controller.dart';
 import 'package:sampark_web/widgets/divider.dart';
 import 'package:sampark_web/widgets/main_info.dart';
 import 'package:sampark_web/widgets/screenshots_page.dart';
@@ -11,6 +13,7 @@ class WebHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
+    AppController appController=Get.put(AppController());
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -25,7 +28,9 @@ class WebHomePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                appController.downloadApk();
+              },
               label: Text('Download App'),
               icon: Icon(Icons.download),
             ),
