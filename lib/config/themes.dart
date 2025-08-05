@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sampark_web/Config/Colors.dart';
 import 'package:sampark_web/config/colors.dart';
 
 var lightTheme = ThemeData();
