@@ -4,7 +4,7 @@ import 'dart:html' as html;
 
 class AppController extends GetxController {
 
-  String appUrl='https://github.com/nikhilesh-7119/Sampark-Chat-App/releases/download/1.0/Sampark.apk';
+  String appUrl='https://github.com/nikhilesh-7119/Sampark-Chat-App/releases/download/1.1.0/Sampark.1.1.0.apk';
   String apkName='Sampark.apk';
 
   Future downloadApk() async{
